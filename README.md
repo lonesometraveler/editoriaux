@@ -1,6 +1,6 @@
 # editoriaux
 
-This is a Rust application that display the title and the url of the 5 latest editorial articles from [the New York Times](https://www.nytimes.com) and [Le Monde](https://www.lemonde.fr).
+This is a Rust application that displays the title and the URL of the 5 latest editorial articles from [the New York Times](https://www.nytimes.com) and [Le Monde](https://www.lemonde.fr).
 
 ## Usage
 
