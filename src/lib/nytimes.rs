@@ -25,7 +25,7 @@ pub fn articles() -> Vec<Article> {
         .take(5)
         .flat_map(|n| n.select(&a_selector))
         .filter_map(|x| x.value().attr("href"))
-        .map(|x| format!("https://www.nytimes.com/{}", x));
+        .map(|x| format!("https://www.nytimes.com{}", x));
 
     titles
         .zip(urls)
