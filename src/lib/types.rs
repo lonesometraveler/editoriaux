@@ -6,14 +6,13 @@ pub struct Article {
     pub link: url::Url,
 }
 
-impl<T, U> From<(T, U)> for Article
+impl<T> From<(String, T)> for Article
 where
-    T: Display,
-    U: AsRef<str> + Display,
+    T: AsRef<str> + Display,
 {
-    fn from((title, link): (T, U)) -> Self {
+    fn from((title, link): (String, T)) -> Self {
         Article {
-            title: title.to_string(),
+            title,
             link: url::Url::parse(link.as_ref()).unwrap(),
         }
     }
