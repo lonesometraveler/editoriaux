@@ -1,6 +1,7 @@
 use super::types::Article;
 
 const URL: &str = "https://www.nytimes.com/section/opinion/editorials";
+const ROOT_URL: &str = "https://www.nytimes.com";
 
 pub fn articles() -> Vec<Article> {
     let document = super::types::helper::get_html(URL);
@@ -19,7 +20,7 @@ pub fn articles() -> Vec<Article> {
         .take(5)
         .flat_map(|n| n.select(&a_selector))
         .filter_map(|x| x.value().attr("href"))
-        .map(|x| format!("https://www.nytimes.com{}", x));
+        .map(|x| format!("{}{}", ROOT_URL, x));
 
     titles.zip(urls).map(|x| x.into()).collect()
 }
