@@ -9,12 +9,12 @@ fn main() {
     let lemonde = lemonde::articles();
     println!("\nLe Monde");
     for article in lemonde {
-        println!("* {} / {:?}", article.title, article.link.as_str());
+        println!("* {}", article);
     }
 
     let nytimes = nytimes::articles();
     println!("\nNY Times");
     for article in nytimes {
-        println!("* {} / {:?}", article.title, article.link.as_str());
+        println!("* {}", article);
     }
 }
